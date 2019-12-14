@@ -64,8 +64,8 @@ class RuleView(APIView):
 
 class DeleteRuleView(APIView):
     """This API /dragon_api/delete-rule/<rule_id> is used to Delete Rule with rule_id"""
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    # authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
 
     def delete(self, request, pk, format=None):
         rule = models.Rule.objects.filter(rule_id=pk)
