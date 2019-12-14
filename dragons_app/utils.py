@@ -5,6 +5,7 @@ DATETIME_FORMAT = "%Y-%m-%d-%H:%M"
 
 
 def is_allowed_to_kill(dragon, request_kill_time, request_animals_to_kill):
+    """This function is used to check whether the kill request is allowed or not"""
     rules = models.Rule.objects.all().order_by('time_period')
     rules_serialized = serializers.RuleSerializer(rules, many=True)
     dragon_kill_records = models.DragonKillRecord.objects.filter(dragon=dragon).order_by('kill_time')

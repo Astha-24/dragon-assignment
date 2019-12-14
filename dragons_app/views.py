@@ -12,8 +12,11 @@ from dragons_app.utils import is_allowed_to_kill
 
 
 class RuleView(APIView):
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    """This API dragon_api/rules is allowed to create and view the rules"""
+    # TokenAuthentication and permission class can be used to allow only the queen to create rules
+
+    # authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
     serializer_class = serializers.RuleSerializer
 
     def get(self, request):
@@ -60,7 +63,7 @@ class RuleView(APIView):
 
 
 class DeleteRuleView(APIView):
-    """Used to Delete Rule with rule_id"""
+    """This API /dragon_api/delete-rule/<rule_id> is used to Delete Rule with rule_id"""
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
 
@@ -82,8 +85,9 @@ class DeleteRuleView(APIView):
 
 
 class DragonView(APIView):
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    """This API /dragon_api/dragons is used to register dragon and view the dragons"""
+    # authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
     serializer_class = serializers.DragonSerializer
 
     def get(self, request):
@@ -129,6 +133,7 @@ class DragonView(APIView):
 
 @api_view(['POST'])
 def kill_by_dragon(request):
+    """This API /dragon_api/kill_by_dragon is used to Request to kill animal"""
     kill_dragon_deserialized = serializers.KillDragonSerializer(data=request.data)
     if kill_dragon_deserialized.is_valid():
         kill_time_string = kill_dragon_deserialized.validated_data.get('kill_time')
