@@ -46,11 +46,8 @@ by changing it in the `Vagrantfile`.
    INPUT FIELDS:<br> `dragon_name`
    <br>
    OUTPUT: <br>
-   ``{
-    "message": "The Dragon is sucessfully registered",
-    "dragon_id": 2,
-    "status": 201
-  }``
+   `{"message": "The Dragon is sucessfully registered", "dragon_id": 2, "status": 201}`
+  
 - (POST)`/dragon_api/kill_by_dragon/`: Determines whether the dragon can kill or not
     <br> INPUT FIELDS: <br>
 `dragon`: Dragon ID <br>
