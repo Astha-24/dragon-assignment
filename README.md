@@ -36,33 +36,30 @@ by changing it in the `Vagrantfile`.
     "status": 201
     }```  
 - (DELETE)`/dragon_api/delete-rule/3/`: Delete rule by rule_id
- <br>
- OUTPUT: <br>
- ``{
-    "message": "The Rule with 3 succesfully deleted",
-    "status": 200
-}``
+    <br> OUTPUT: <br>
+    ```{
+        "message": "The Rule with 3 succesfully deleted",
+     "status": 200}```
 
 - (GET)`/dragon_api/dragons/`: Displays all the dragons
-- (POST)`/dragon_api/dragons/`: Register a Dragon
-<br>
-INPUT FIELDS:<br> `dragon_name`
-<br>
-OUTPUT: <br>
-``{
+- (POST)`/dragon_api/dragons/`: Register a Dragon <br>
+   INPUT FIELDS:<br> `dragon_name`
+   <br>
+   OUTPUT: <br>
+   ``{
     "message": "The Dragon is sucessfully registered",
     "dragon_id": 2,
     "status": 201
-}``
--(POST)`/dragon_api/kill_by_dragon/`: Determines whether the dragon can kill or not
-<br> INPUT FIELDS: <br>
+  }``
+- (POST)`/dragon_api/kill_by_dragon/`: Determines whether the dragon can kill or not
+    <br> INPUT FIELDS: <br>
 `dragon`: Dragon ID <br>
 `kill_time`: **timestamp** for the Request <br>
 `animals_killed`: **noOfAnimal** requested to kill
-<br>
-OUTPUT: <br>
-``{
-    "did kill": true
-}``
+    <br>
+    OUTPUT: <br>
+    ``{
+        "did kill": true
+    }``
 
 ---
