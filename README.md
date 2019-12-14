@@ -9,5 +9,5 @@
 7. `source ~/env/bin/activate`
 8. `pip install -r requirements.txt`
 9. `python manage.py migrate`
-10. `python manage.py runserver 0.0.0.0::8000`
+10. `python manage.py runserver 0.0.0.0::8000`<br>
 [Download vagrant from here](https://www.vagrantup.com/downloads.html)
