@@ -20,7 +20,7 @@ def is_allowed_to_kill(dragon, request_kill_time, request_animals_to_kill):
         for dragon_kill_record in dragon_kill_record_serialized.data:
             kill_time_record_string = dragon_kill_record.get('kill_time')
             kill_time_record = dt.datetime.strptime(kill_time_record_string, DATETIME_FORMAT)
-            if start_time < kill_time_record < end_time:
+            if start_time < kill_time_record <= end_time:
                 count_dragon_killed += dragon_kill_record.get('animals_killed')
         if count_dragon_killed + request_animals_to_kill > max_animals_to_kill:
             return False
