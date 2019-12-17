@@ -95,7 +95,7 @@ class DragonView(APIView):
             dragons = models.Dragon.objects.all()
             dragons_serialized = self.serializer_class(dragons, many=True)
             response = {
-                'rules': dragons_serialized.data,
+                'dragons': dragons_serialized.data,
                 'status': status.HTTP_200_OK
             }
         except Exception as e:
